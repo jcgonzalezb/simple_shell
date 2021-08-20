@@ -23,7 +23,7 @@ void (*selectfunction(char **args))(char **args)
 	{
 		if (_strcmp(args[0], options[i].program) == 0)
 		{
-			return (*options[i].f);
+			return (options[i].f);
 		}
 		i++;
 	}
