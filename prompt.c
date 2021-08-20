@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "shell.h"
 
 /**
@@ -8,27 +9,35 @@
  * @data: data
  * Return: Result
  */
-void main(void)
+void prompt(void)
 {
-	char *line = NULL;
+	char *line;
 	char *prompt = "$ ";
-	size_t lineSize = 0;
-	int charactersread = 0;
+	char **args;
+	int status;
+	void (*builtin) (char**);
 
-	do
-	{
+	do {
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, prompt, _strlen(prompt));
 
-		if (getline(&line, &lineSize, stdin) == -1)
-			exit(EXIT_SUCCESS);
+		line = read_c();
+		args = tokenization(line);
 
-		charactersread = getline(&line, &lineSize, stdin);
+		/*if (args[0] == NULL)*/
+		/*return (1);*/
 
-		/* write(STDOUT_FILENO, line, charactersread); */
-		/*tokens*/
+		builtin = selectfunction(args);
 
-	}
-	while (1);
+		if (builtin == NULL)
+			printf("Search in the path");
+		else
+			builtin(args);
+		/*status = builtin(args);*/
+		/*status = int(builtin(char**))*/
 
+		free(line);
+		free(args);
+
+	} while (1);
 }
