@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include "shell.h"
 
 extern char **environ;
 
@@ -19,7 +18,7 @@ char *getvarfromenv(char *varname)
 		}
 		if (varname[j] == '\0' && environ[i][j] == '=')
 		{
-			/*printf("%c\n", environ[i][j]);*/
+			printf("%c\n", environ[i][j]);
 			result = &environ[i][j + 1];
 		}
 	}
@@ -46,7 +45,9 @@ int main()
 {
 	char *pathValue = getvarfromenv("PATH");
 	printf("%s\n", pathValue);
-	char *copy_path = strdup(pathValue);
+
+	char *copy_path = _strdup(pathValue);
 	char **dividedPath = tokenize(copy_path);
+
 	printf("First path direction is: %s\n", dividedPath[0]);
 }
