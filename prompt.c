@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "shell.h"
 
 /**
@@ -8,27 +9,22 @@
  * @data: data
  * Return: Result
  */
-void main(void)
+void prompt(void)
 {
-	char *line = NULL;
+	char *line;
 	char *prompt = "$ ";
-	size_t lineSize = 0;
-	int charactersread = 0;
-				
-	do
-	{
+
+	char **args;
+	/*int info;*/
+	do {
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, prompt, _strlen(prompt));
-		
-		if (getline(&line, &lineSize, stdin) == -1)
-			exit(EXIT_SUCCESS);
 
-		charactersread = getline(&line, &lineSize, stdin);
+		line = read_c();
+		args = tokenization(line);
+		/*info = execute(args);*/
 
-		/* write(STDOUT_FILENO, line, charactersread); */
-		/*tokens*/ 
-
-	}
-	while (1);
-		
+		/*free(line);*/
+		/*free(args);*/
+	} while (1);
 }
