@@ -14,7 +14,7 @@ void prompt(void)
 	char *line;
 	char *prompt = "$ ";
 	char **args;
-	/*int info;*/
+	int status;
 	void (*builtin) (char**);
 
 	do {
@@ -31,11 +31,13 @@ void prompt(void)
 
 		if (builtin == NULL)
 			printf("Search in the path");
-				
-		/*info = execute(args);*/
+		else
+			builtin(args);
+		/*status = builtin(args);*/
+		/*status = int(builtin(char**))*/
 
-		/*free(line);*/
-		/*free(args);*/
+		free(line);
+		free(args);
 
 	} while (1);
 }
