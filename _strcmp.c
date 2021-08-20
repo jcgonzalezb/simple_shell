@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 
 /**
  * _strcmp -  function should work exactly like strcmp
@@ -10,13 +10,14 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
+	int indx;
 
-	while (*(s1 + i) == *(s2 + i) && *(s1 + i))
-	i++;
-
-	if (*(s2 + i))
-		return (*(s1 + i) - *(s2 + i));
-
+	for (indx = 0; s1[indx] != '\0' && s2[indx] != '\0'; indx++)
+	{
+		if (s1[indx] != s2[indx])
+		{
+			return (s1[indx] - s2[indx]);
+		}
+	}
 	return (0);
 }
