@@ -12,10 +12,13 @@
 void prompt(void)
 {
 	char *line;
+	char **environment;
 	char *prompt = "$ ";
 	char **args;
+	char **match;
 	int status;
 	void (*builtin) (char**);
+	char **check;
 
 	do {
 		if (isatty(STDIN_FILENO))
@@ -30,7 +33,11 @@ void prompt(void)
 		builtin = selectfunction(args);
 
 		if (builtin == NULL)
+		{
 			printf("Search in the path");
+			environment = nobuiltin();
+			/*check = match(args, environment);*/
+		}
 		else
 			builtin(args);
 		/*status = builtin(args);*/
