@@ -36,12 +36,15 @@ char **tokenize(char *string)
 	{
 		i++;
 		tokenized[i] = strtok(NULL, ":");
+		printf("Tests ongoing: %s\n", tokenized[i]);
 	}
 	printf("Test case: %s\n", tokenized[0]);
+
+
 	return (tokenized);
 }
 
-int main()
+char ** nobuiltin()
 {
 	char *pathValue = getvarfromenv("PATH");
 	printf("%s\n", pathValue);
@@ -50,4 +53,6 @@ int main()
 	char **dividedPath = tokenize(copy_path);
 
 	printf("First path direction is: %s\n", dividedPath[0]);
+	/*char **done = check(dividedPath);*/
+	return(dividedPath);
 }
