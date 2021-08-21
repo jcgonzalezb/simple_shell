@@ -28,7 +28,8 @@ char *getvarfromenv(char *varname);
 char *_strdup(char *str);
 char **check(char **args, char **dividedPath);
 char ** nobuiltin();
-void **match(char **args, char **dividedPath);
+char *matchin(char **args);
+char *_strcat(char *dest, char *src);
 
 typedef struct buildin
 {
