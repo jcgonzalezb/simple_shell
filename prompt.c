@@ -15,10 +15,10 @@ void prompt(void)
 	char **environment;
 	char *prompt = "$ ";
 	char **args;
-	char **match;
+	char *matchin;
 	int status;
 	void (*builtin) (char**);
-	char **check;
+	char *checkin;
 
 	do {
 		if (isatty(STDIN_FILENO))
@@ -36,7 +36,7 @@ void prompt(void)
 		{
 			printf("Search in the path");
 			environment = nobuiltin();
-			/*check = match(args, environment);*/
+			checkin = matchin(args);
 		}
 		else
 			builtin(args);
