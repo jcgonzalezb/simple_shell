@@ -31,7 +31,6 @@ void prompt(void)
 			continue;
 
 		builtin = selectfunction(args);
-
 		if (builtin == NULL)
 		{
 			pathValue = getvarfromenv("PATH");
