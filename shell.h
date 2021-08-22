@@ -1,35 +1,33 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <stdlib.h>
 #include <sys/wait.h>
-#include <wait.h>
-#include <fcntl.h>
-#include <dirent.h>
-#include <signal.h>
-
+extern char **environ;
+extern char **environ;
 int _putchar(char c);
 int _strlen(char *s);
 char **_strtok(char *line);
-char *str_concat(char *s1, char *s2);
 void prompt(void);
 char *read_c(void);
 char **tokenization(char *line);
 void (*selectfunction(char **args))(char **args);
 int _strcmp(char *s1, char *s2);
 void exitf(char **args);
-char **tokenize(char *string);
 char *getvarfromenv(char *varname);
+char **tokenizepath(char *string);
+char *_strncat(char *dest, char *src);
 char *_strdup(char *str);
-char **check(char **args, char **dividedPath);
-char ** nobuiltin();
-void **match(char **args, char **dividedPath);
+int stat_command(char **args, char **dividedPath);
 
+/**
+ * struct buildin - Structure for selecting type of function.
+ * @program: Built-in function.
+ * @f: Calls the built-in function.
+ */
 typedef struct buildin
 {
 	char *program;
