@@ -1,14 +1,12 @@
 #include "shell.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
 extern char **environ;
 
 /**
  * stat_command - This function do the stat, PID & PPID,
  * and find & excecute the command in the path.
  * @args: This is the input command tokenaized yet.
- * @dividePath: These are all the paths tokenaized yet.
+ * @dividedPath: These are all the paths tokenaized yet.
+ * Return: Zero in case completes the task successfully.
  */
 int stat_command(char **args, char **dividedPath)
 {
@@ -32,25 +30,7 @@ int stat_command(char **args, char **dividedPath)
 
 		if ((stat(buffer, &sb) == 0) && j != 1)
 		{
-			pid = fork();
-
-			if (pid == -1)
-			{
-				perror("Error:");
-				return (1);
-			}
-			if (pid == 0)
-			{
-				execute = execve(buffer, args, environ);
-				if (execute == -1)
-					exit(98);
-			}
-			else
-			{
-				j = 1;
-				wait(&status);
-				/*return(status);*/
-			}
+			launch(buffer, args, environ);
 		}
 	}
 	return (0);
