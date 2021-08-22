@@ -27,8 +27,6 @@ int stat_command(char **args, char **dividedPath);
  * struct buildin - Structure for selecting type of function.
  * @program: Built-in function.
  * @f: Calls the built-in function.
- *
- * Description:
  */
 typedef struct buildin
 {
