@@ -4,7 +4,7 @@
 #include <unistd.h>
 extern char **environ;
 /**
- * stat_command - This function do the stat, PID & PPID, and excecute the.
+ * stat_command - This function do the stat, PID & PPID, and find & excecute the
  *command in the path.
  *@args: This is the input command tokenaized yet.
  *@dividePath: These are all the paths tokenaized yet.
