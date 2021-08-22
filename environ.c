@@ -1,13 +1,20 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <unistd.h>
-#include "shell.h"
-
+#include <sys/wait.h>
 extern char **environ;
 
+/**
+ * getvarfromenv - This function do the extraction of
+ * the variable from the environment.
+ * @varname: Environment variable.
+ * Return: The folders inside the environment. Returns
+ * zero in case the variable name ("PATH" in this case),
+ * is not found.
+ */
 char *getvarfromenv(char *varname)
 {
-	char *result;
 	int i = 0;
 	int j = 0;
 
@@ -18,41 +25,30 @@ char *getvarfromenv(char *varname)
 		}
 		if (varname[j] == '\0' && environ[i][j] == '=')
 		{
-			printf("%c\n", environ[i][j]);
-			result = &environ[i][j + 1];
+			/*printf("%c\n", environ[i][j]);*/
+			return (environ[i] + j + 1);
 		}
 	}
-	return (result);
+	return (NULL);
 }
 
-char **tokenize(char *string)
+/**
+ * tokenizepath - This function gets the folders of the
+ * environment variable and split them into tokens.
+ * @string: Folders inside the environment variable.
+ * Return: String with pointers to every individual folder.
+ */
+char **tokenizepath(char *string)
 {
-	char *copy, **tokenized;
+	char **tokenized = NULL;
 	size_t i = 0;
 
-	tokenized = malloc(1024);
+	tokenized = malloc(sizeof(char *) * 1024);
 	tokenized[0] = strtok(string, ":");
 	while (tokenized[i])
 	{
 		i++;
 		tokenized[i] = strtok(NULL, ":");
-		printf("Tests ongoing: %s\n", tokenized[i]);
 	}
-	printf("Test case: %s\n", tokenized[0]);
-
-
 	return (tokenized);
-}
-
-char ** nobuiltin()
-{
-	char *pathValue = getvarfromenv("PATH");
-	printf("%s\n", pathValue);
-
-	char *copy_path = _strdup(pathValue);
-	char **dividedPath = tokenize(copy_path);
-
-	printf("First path direction is: %s\n", dividedPath[0]);
-	/*char **done = check(dividedPath);*/
-	return(dividedPath);
 }
