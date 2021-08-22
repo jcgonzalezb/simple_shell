@@ -6,19 +6,19 @@
 
 /**
  * prompt - prompter.
- * @data: data
  * Return: Result
  */
 void prompt(void)
 {
-	char *line;
-	char **environment;
+	char *line = NULL;
 	char *prompt = "$ ";
-	char **args;
-	char *matchin;
-	int status;
-	void (*builtin) (char**);
-	char *checkin;
+	char **args = NULL;
+	int status = 0;
+	char *pathValue = NULL;
+	char *copy_path = NULL;
+	char **dividedPath = NULL;
+
+	void (*builtin)(char **);
 
 	do {
 		if (isatty(STDIN_FILENO))
@@ -27,24 +27,25 @@ void prompt(void)
 		line = read_c();
 		args = tokenization(line);
 
-		/*if (args[0] == NULL)*/
-		/*	return (1);*/
+		if (args[0] == NULL)
+			continue;
 
 		builtin = selectfunction(args);
 
 		if (builtin == NULL)
 		{
-			printf("Search in the path");
-			environment = nobuiltin();
-			checkin = matchin(args);
+			pathValue = getvarfromenv("PATH");
+			copy_path = strdup(pathValue);
+			dividedPath = tokenizepath(copy_path);
+			stat_command(args, dividedPath);
 		}
 		else
 			builtin(args);
 		/*status = builtin(args);*/
 		/*status = int(builtin(char**))*/
 
-		free(line);
-		free(args);
+		/*free(line)*/
+		/*free(args);*/
 
 	} while (1);
 }
