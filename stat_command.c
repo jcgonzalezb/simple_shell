@@ -11,9 +11,6 @@ extern char **environ;
 int stat_command(char **args, char **dividedPath)
 {
 	int i = 0, j = 0, x = 0;
-	int execute = 0;
-	int status = 0;
-	int pid = 0;
 	char buffer[1024];
 	struct stat sb;
 
