@@ -4,11 +4,11 @@
 #include "shell.h"
 
 /**
- * selectfunction - Function that prints anything.
+ * selectfunction - Function that selects the type of function.
+ * @args: This is the input command tokenaized yet.
  * Return: Pointer to the function that corresponds
  * to the format given as a parameter.
  */
-
 void (*selectfunction(char **args))(char **args)
 {
 	int i = 0;
