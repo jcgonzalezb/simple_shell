@@ -1,5 +1,4 @@
 #include "shell.h"
-extern char **environ;
 
 /**
  * stat_command - This function do the stat, PID & PPID,
