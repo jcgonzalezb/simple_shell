@@ -13,7 +13,7 @@ void prompt(void)
 	char *line = NULL;
 	char *prompt = "$ ";
 	char **args = NULL;
-	int status = 0;
+	/*int status = 0;*/
 	char *pathValue = NULL;
 	char *copy_path = NULL;
 	char **dividedPath = NULL;
