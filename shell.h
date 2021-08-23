@@ -9,7 +9,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 extern char **environ;
-extern char **environ;
 int _putchar(char c);
 int _strlen(char *s);
 char **_strtok(char *line);
