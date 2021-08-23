@@ -1,5 +1,4 @@
 #include "shell.h"
-extern char **environ;
 
 /**
  * launch - Function that starts the execution process.
@@ -11,7 +10,7 @@ extern char **environ;
  */
 int launch(char *buffer, char **args, char **environ)
 {
-	int j = 0;
+	/*int j = 0;*/
 	int execute = 0;
 	int status = 0;
 	int pid = 0;
@@ -31,7 +30,7 @@ int launch(char *buffer, char **args, char **environ)
 	}
 	else
 	{
-		j = 1;
+		/*j = 1;*/
 		wait(&status);
 		/*return(status);*/
 	}
