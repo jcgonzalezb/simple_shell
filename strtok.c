@@ -1,5 +1,3 @@
-#include <string.h>
-#include <stdio.h>
 #include "shell.h"
 
 #define TOK_BUFSIZE 1024
