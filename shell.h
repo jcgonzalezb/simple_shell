@@ -6,7 +6,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
-extern char **environ;
+#include <sys/types.h>
+#include <sys/stat.h>
 extern char **environ;
 int _putchar(char c);
 int _strlen(char *s);
@@ -22,6 +23,7 @@ char **tokenizepath(char *string);
 char *_strncat(char *dest, char *src);
 char *_strdup(char *str);
 int stat_command(char **args, char **dividedPath);
+int launch(char *buffer, char **args, char **environ);
 
 /**
  * struct buildin - Structure for selecting type of function.

@@ -1,6 +1,3 @@
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "shell.h"
 
 /**
@@ -12,7 +9,7 @@
 char *read_c(void)
 {
 	char *line = NULL;
-	ssize_t lineSize = 0;
+	size_t lineSize = 0;
 
 	if (getline(&line, &lineSize, stdin) == -1)
 		exit(EXIT_SUCCESS);
