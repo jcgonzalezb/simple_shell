@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
-extern char **environ;
+#include "shell.h"
 
 /**
  * getvarfromenv - This function do the extraction of
