@@ -17,6 +17,7 @@ void prompt(void)
 	char *copy_path = NULL;
 	char **dividedPath = NULL;
 	void (*builtin)(char **);
+	int i;
 
 	do {
 		if (isatty(STDIN_FILENO))
@@ -40,9 +41,19 @@ void prompt(void)
 		{
 			exitf(args);
 		}
+		
+		for (i = 0; args[i] != NULL; i++)
+		{
+			free(args[i]);
+		}
+		for (i = 0; dividedPath[i] != NULL; i++)
+		{
+			free(dividedPath[i]);
+		}
 		/*status = builtin(args);*/
 		/*status = int(builtin(char**))*/
 		free(line);
 		free(args);
+		free(dividedPath);
 	} while (1);
 }
