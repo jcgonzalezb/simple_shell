@@ -43,9 +43,7 @@ void prompt(void)
 		}
 		/*status = builtin(args);*/
 		/*status = int(builtin(char**))*/
-
 		free(line);
 		free(args);
-
 	} while (1);
 }
