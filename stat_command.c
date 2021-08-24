@@ -28,6 +28,7 @@ int stat_command(char **args, char **dividedPath)
 		{
 			launch(buffer, args, environ);
 		}
+		/*perror("Error: Executable cannot be found");*/
 	}
 	return (1);
 }
