@@ -2,5 +2,8 @@
 
 void exitf(char **args)
 {
-  printf("This is a exit");
+	int exit_test;
+	/*printf("This is a exit");*/
+	exit(exit_test);
+	/*return (0);*/
 }
