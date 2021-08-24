@@ -37,4 +37,5 @@ int launch(char *buffer, char **args, char **environ)
 		wait(&status);
 		/*return(status);*/
 	}
+	return (0);
 }
