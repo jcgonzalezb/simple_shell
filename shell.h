@@ -25,6 +25,7 @@ char *_strdup(char *str);
 int stat_command(char **args, char **dividedPath);
 int launch(char *buffer, char **args, char **environ);
 
+
 /**
  * struct buildin - Structure for selecting type of function.
  * @program: Built-in function.
