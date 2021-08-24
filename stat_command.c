@@ -29,5 +29,5 @@ int stat_command(char **args, char **dividedPath)
 			launch(buffer, args, environ);
 		}
 	}
-	return (0);
+	return (1);
 }

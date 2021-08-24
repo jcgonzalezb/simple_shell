@@ -27,6 +27,9 @@ int launch(char *buffer, char **args, char **environ)
 		execute = execve(buffer, args, environ);
 		if (execute == -1)
 			exit(98);
+	} else if (pid < 0)
+	{
+	perror("Error:");
 	}
 	else
 	{

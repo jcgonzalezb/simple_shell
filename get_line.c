@@ -12,7 +12,7 @@ char *read_c(void)
 	size_t lineSize = 0;
 
 	if (getline(&line, &lineSize, stdin) == -1)
-		exit(EXIT_SUCCESS);
+		exitf(EXIT_SUCCESS);
 
 	if (line[0] == '\n')
 		return (line);
