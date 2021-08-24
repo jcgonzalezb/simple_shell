@@ -13,11 +13,10 @@ void prompt(void)
 	char *line = NULL;
 	char *prompt = "$ ";
 	char **args = NULL;
-	int status = 0;
+	int status = 1, i = 0;
 	char *pathValue = NULL;
 	char *copy_path = NULL;
 	char **dividedPath = NULL;
-
 	void (*builtin)(char **);
 
 	do {
@@ -39,7 +38,9 @@ void prompt(void)
 			stat_command(args, dividedPath);
 		}
 		else
+		{
 			exitf(args);
+		}
 		/*status = builtin(args);*/
 		/*status = int(builtin(char**))*/
 
