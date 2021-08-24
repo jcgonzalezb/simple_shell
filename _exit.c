@@ -2,8 +2,15 @@
 
 void exitf(char **args)
 {
-	int exit_test;
+	/*char *line;*/
 	/*printf("This is a exit");*/
-	exit(exit_test);
+	int i;
+	for (i = 0; args[i] != NULL; i++)
+		{
+			free(args[i]);
+		}
+	free(args);
+	/*free(line);*/
+	exit(EXIT_SUCCESS);
 	/*return (0);*/
 }
