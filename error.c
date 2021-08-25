@@ -33,6 +33,7 @@ void _perror(char *shell_name, char *command_name)
 	int i = 0;
 	char error[1024];
 
+	memset(error, 0, 1024);
 	_strcat(error, shell_name);
 	_strcat(error, ": ");
 	_strcat(error, "1: ");
