@@ -12,14 +12,9 @@
  */
 int main(int argc, char **argv)
 {
-	char *line = NULL;
-	char *prompt = "$ ";
-	char **args = NULL;
-	char *pathValue = NULL;
-	char *copy_path = NULL;
-	char **dividedPath = NULL;
+	char *line = NULL, *prompt = "$ ", *pathValue = NULL, *copy_path = NULL;
+	char **args = NULL, **dividedPath = NULL;
 	void (*builtin)(char **);
-
 	(void)argc;
 
 	do {
@@ -44,9 +39,10 @@ int main(int argc, char **argv)
 		{
 			exitf(args);
 		}
-		free(line);
-		free(args);
 		free(dividedPath);
 		free(copy_path);
+		free(args);
+		free(line);
+
 	} while (1);
 }
