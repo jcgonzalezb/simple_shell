@@ -15,9 +15,9 @@ char **_strtok(char *line);
 void prompt(void);
 char *read_c(void);
 char **tokenization(char *line);
-void (*selectfunction(char **args))(char **args);
+void (*selectfunction(char **args))(char **args, char *line);
 int _strcmp(char *s1, char *s2);
-void exitf(char **args);
+void exitf(char **args, char *line);
 char *getvarfromenv(char *varname);
 char **tokenizepath(char *string);
 char *_strncat(char *dest, char *src);
@@ -37,7 +37,7 @@ char *str_concat(char *s1, char *s2);
 typedef struct buildin
 {
 	char *program;
-	void (*f)(char **args);
+	void (*f)(char **, char *);
 } order;
 
 #endif

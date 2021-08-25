@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
 	char *line = NULL, *prompt = "$ ", *pathValue = NULL, *copy_path = NULL;
 	char **args = NULL, **dividedPath = NULL;
-	void (*builtin)(char **);
+	void (*builtin)(char **, char *);
 	(void)argc;
 
 	do {
@@ -25,11 +25,11 @@ int main(int argc, char **argv)
 		args = tokenization(line);
 		if (args[0] == NULL)
 		{
+			printf("Llegue");
 			free(args);
 			free(line);
 			continue;
 		}
-
 		builtin = selectfunction(args);
 		if (builtin == NULL)
 		{
@@ -37,16 +37,17 @@ int main(int argc, char **argv)
 			copy_path = _strdup(pathValue);
 			dividedPath = tokenizepath(copy_path);
 			if (stat_command(args, dividedPath) == -1)
+			{
 				_perror(argv[0], args[0]);
 			}
+		}
 		else
 		{
-			exitf(args);
+			exitf(args, line);
 		}
 		free(dividedPath);
 		free(copy_path);
 		free(args);
 		free(line);
-
 	} while (1);
 }

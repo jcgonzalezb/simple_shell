@@ -5,7 +5,7 @@
  * @args: This is the input command tokenaized yet.
  * Return: Exit the shell.
  */
-void exitf(char **args)
+void exitf(char **args, char *line)
 {
 	int i = 0;
 
@@ -14,5 +14,7 @@ void exitf(char **args)
 		free(args[i]);
 	}
 	free(args);
+	/* free(line);*/
+	(void)line;
 	exit(EXIT_SUCCESS);
 }

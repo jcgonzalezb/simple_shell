@@ -6,7 +6,7 @@
  * Return: Pointer to the function that corresponds
  * to the format given as a parameter.
  */
-void (*selectfunction(char **args))(char **args)
+void (*selectfunction(char **args))(char **args, char *line)
 {
 	int i = 0;
 
