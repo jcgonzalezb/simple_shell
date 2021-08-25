@@ -1,6 +1,4 @@
 #include "shell.h"
-
-#define TOK_BUFSIZE 1024
 #define TOK_DELIM " \t\r\n\a"
 
 /**
@@ -12,8 +10,8 @@
 char **tokenization(char *line)
 {
 	char *token;
-	int bufsize =  TOK_BUFSIZE, p = 0;
-	char **tokens = malloc(bufsize * sizeof(char *));
+	int p = 0;
+	char **tokens = malloc(sizeof(char *) * 1024);
 
 	if (!tokens)
 		exit(EXIT_SUCCESS);
