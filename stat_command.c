@@ -13,7 +13,7 @@ int stat_command(char **args, char **dividedPath)
 	char buffer[1024];
 	struct stat sb;
 
-	for (i = -1; i == -1 || dividedPath[i] != NULL; i++)
+	for (i = -1; (i == -1 || dividedPath[i] != NULL) && j == 0; i++)
 	{
 		for (x = 0; x < 1024; x++)
 			buffer[x] = '\0';
@@ -23,7 +23,7 @@ int stat_command(char **args, char **dividedPath)
 			_strncat(buffer, "/");
 		}
 		_strncat(buffer, args[0]);
-		if ((stat(buffer, &sb) == 0) && j != 1)
+		if (stat(buffer, &sb) == 0)
 		{
 			pid = fork();
 			if (pid == -1)
@@ -41,9 +41,13 @@ int stat_command(char **args, char **dividedPath)
 			{
 				j = 1;
 				wait(&status);
+				break;
 			}
 		}
-		/*perror("Error: Executable cannot be found");*/
 	}
+	if (j == 0)
+		/*perror("Error: not found");*/
+		/*_perror(shell, command);*/
+		return (-1);
 	return (0);
 }
