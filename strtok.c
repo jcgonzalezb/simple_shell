@@ -25,7 +25,6 @@ char **tokenization(char *line)
 		tokens[p] = token;
 		p++;
 
-		printf("%s\n", token);
 		token = strtok(NULL, TOK_DELIM);
 	}
 	tokens[p] = NULL;

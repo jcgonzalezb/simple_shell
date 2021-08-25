@@ -23,7 +23,8 @@ char **tokenizepath(char *string);
 char *_strncat(char *dest, char *src);
 char *_strdup(char *str);
 int stat_command(char **args, char **dividedPath);
-int launch(char *buffer, char **args, char **environ);
+/*int launch(char *buffer, char **args, char **environ);*/
+/*void _perror(char *shell_name, char *command_name);*/
 
 
 /**
