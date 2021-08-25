@@ -25,7 +25,6 @@ int main(int argc, char **argv)
 		args = tokenization(line);
 		if (args[0] == NULL)
 		{
-			printf("Llegue");
 			free(args);
 			free(line);
 			continue;
