@@ -21,11 +21,13 @@ void exitf(char **args);
 char *getvarfromenv(char *varname);
 char **tokenizepath(char *string);
 char *_strncat(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 int stat_command(char **args, char **dividedPath);
-/*int launch(char *buffer, char **args, char **environ);*/
-/*void _perror(char *shell_name, char *command_name);*/
+void _perror(char *shell_name, char *command_name);
+char *str_concat(char *s1, char *s2);
 
+#define SHELL_NAME hsh
 
 /**
  * struct buildin - Structure for selecting type of function.
