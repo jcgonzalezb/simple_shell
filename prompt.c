@@ -24,7 +24,11 @@ int main(int argc, char **argv)
 		line = read_c();
 		args = tokenization(line);
 		if (args[0] == NULL)
+		{
+			free (args);
+			free(line);
 			continue;
+		}
 
 		builtin = selectfunction(args);
 		if (builtin == NULL)
