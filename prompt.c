@@ -5,7 +5,9 @@
 #include "shell.h"
 
 /**
- * prompt - prompter.
+ * main - main section of the shell program.
+ * @argc: Number of arguments.
+ * @argv: Values of arguments.
  * Return: Result
  */
 int main(int argc, char **argv)
@@ -17,7 +19,7 @@ int main(int argc, char **argv)
 	char *copy_path = NULL;
 	char **dividedPath = NULL;
 	void (*builtin)(char **);
-	
+
 	(void)argc;
 
 	do {
