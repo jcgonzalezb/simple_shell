@@ -2,6 +2,7 @@
 
 /**
  * exitf - Function to exit the shell.
+ * @args: This is the input command tokenaized yet.
  * Return: Exit the shell.
  */
 void exitf(char **args)
