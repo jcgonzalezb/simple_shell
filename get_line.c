@@ -12,12 +12,14 @@ char *read_c(void)
 	size_t lineSize = 0;
 
 	if (getline(&line, &lineSize, stdin) == -1)
+	{
+		free(line);
 		exit(EXIT_SUCCESS);
+	}
 
 	if (line[0] == '\n')
 	{
 		return (line);
 	}
-
 	return (line);
 }
