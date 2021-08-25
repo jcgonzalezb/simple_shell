@@ -12,10 +12,7 @@ char *read_c(void)
 	size_t lineSize = 0;
 
 	if (getline(&line, &lineSize, stdin) == -1)
-	{
-		write(STDOUT_FILENO, "\n", 2);
 		exit(EXIT_SUCCESS);
-	}
 
 	if (line[0] == '\n')
 	{
