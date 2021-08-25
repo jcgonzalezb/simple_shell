@@ -12,18 +12,15 @@ char *read_c(void)
 	size_t lineSize = 0;
 
 	if (getline(&line, &lineSize, stdin) == -1)
-	{	
-		exitf(EXIT_SUCCESS);
+	{
+		write(STDOUT_FILENO, "\n", 2);
+		exit(EXIT_SUCCESS);
 	}
 
 	if (line[0] == '\n')
 	{
-	/*	perror("Error: Command not inserted");*/
 		return (line);
 	}
-	/*charactersread = getline(&line, &lineSize, stdin);*/
 
-		/* write(STDOUT_FILENO, line, charactersread); */
-		/*tokens*/
 	return (line);
 }

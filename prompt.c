@@ -5,10 +5,12 @@
 #include "shell.h"
 
 /**
- * prompt - prompter.
+ * main - main section of the shell program.
+ * @argc: Number of arguments.
+ * @argv: Values of arguments.
  * Return: Result
  */
-void prompt(void)
+int main(int argc, char **argv)
 {
 	char *line = NULL;
 	char *prompt = "$ ";
@@ -17,7 +19,8 @@ void prompt(void)
 	char *copy_path = NULL;
 	char **dividedPath = NULL;
 	void (*builtin)(char **);
-	int i;
+
+	(void)argc;
 
 	do {
 		if (isatty(STDIN_FILENO))
@@ -25,7 +28,6 @@ void prompt(void)
 
 		line = read_c();
 		args = tokenization(line);
-
 		if (args[0] == NULL)
 			continue;
 
@@ -33,27 +35,18 @@ void prompt(void)
 		if (builtin == NULL)
 		{
 			pathValue = getvarfromenv("PATH");
-			copy_path = strdup(pathValue);
+			copy_path = _strdup(pathValue);
 			dividedPath = tokenizepath(copy_path);
-			stat_command(args, dividedPath);
-		}
+			if (stat_command(args, dividedPath) == -1)
+				_perror(argv[0], args[0]);
+			}
 		else
 		{
 			exitf(args);
 		}
-		
-		for (i = 0; args[i] != NULL; i++)
-		{
-			free(args[i]);
-		}
-		for (i = 0; dividedPath[i] != NULL; i++)
-		{
-			free(dividedPath[i]);
-		}
-		/*status = builtin(args);*/
-		/*status = int(builtin(char**))*/
 		free(line);
 		free(args);
 		free(dividedPath);
+		free(copy_path);
 	} while (1);
 }
