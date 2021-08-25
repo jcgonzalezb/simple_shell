@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		args = tokenization(line);
 		if (args[0] == NULL)
 		{
-			free (args);
+			free(args);
 			free(line);
 			continue;
 		}
