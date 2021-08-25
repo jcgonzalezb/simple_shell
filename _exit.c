@@ -1,16 +1,17 @@
 #include "shell.h"
 
+/**
+ * exitf - Function to exit the shell.
+ * Return: Exit the shell.
+ */
 void exitf(char **args)
 {
-	/*char *line;*/
-	/*printf("This is a exit");*/
-	int i;
+	int i = 0;
+
 	for (i = 0; args[i] != NULL; i++)
-		{
-			free(args[i]);
-		}
+	{
+		free(args[i]);
+	}
 	free(args);
-	/*free(line);*/
 	exit(EXIT_SUCCESS);
-	/*return (0);*/
 }
