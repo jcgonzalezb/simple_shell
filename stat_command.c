@@ -46,8 +46,7 @@ int stat_command(char **args, char **dividedPath)
 		}
 	}
 	if (j == 0)
-		/*perror("Error: not found");*/
-		/*_perror(shell, command);*/
 		return (-1);
+
 	return (0);
 }
