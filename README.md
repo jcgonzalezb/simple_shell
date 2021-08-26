@@ -61,12 +61,6 @@ The objective of this project is to create from scratch a simple UNIX command in
 
 A Unix computer operating system
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
