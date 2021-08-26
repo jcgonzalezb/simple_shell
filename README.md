@@ -57,10 +57,7 @@
       <a href="#about-the-project">Description of the shell project</a>
       <ul>
         <li><a href="#built-with">Requirements</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
+      <!-- <ul> -->
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
     </li>
