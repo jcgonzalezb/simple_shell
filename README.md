@@ -78,29 +78,24 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Description of the shell project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The objective of this project is to create from scratch a simple UNIX command interpreter with limited functionality but applying the core concepts of a more robust shell. In simple words, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. It incorporates many features and generally executes other commands.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+    How does a shell work.
+    What is a PID and a ppid, and how to use them.
+    How to manipulate the environment of the current process.
+    What is the difference between a function and a system call.
+    How to create processes.
+    How does the shell use the PATH to find the programs.
+    How to execute another program with the execve system call.
+    How to suspend the execution of a process until one of its children terminates
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
+### Requirements
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
-### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
-
+A Unix computer operating system
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -110,26 +105,21 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
+* copy
   ```sh
-  npm install npm@latest -g
+(https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04)
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/jcgonzalezb/simple_shell.git
    ```
-3. Install NPM packages
+2. Compilation
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+    gcc -Wall -pedantic -Werror Wextra *.c -o hsh
    ```
 
 
@@ -137,11 +127,25 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+The command interpreter can be use in two ways.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### The interactive mode :
 
+Execute normaly and it would be show to prompt, feel free to enter your comand.
 
+   ```sh
+      ./hsh
+   ```
+  (https://pbs.twimg.com/media/E9vA4R_X0AE2xQ6?format=png&name=medium)
+
+and always can quit safe, with comand exit or pushin in the keyboard crtl+d.
+
+(https://pbs.twimg.com/media/E9vCAYOWYAYYo5Z?format=png&name=900x900)
+
+### Non interactive-mode
+
+You can pass the argument with echo option  echo "ls" | ./hsh
+(https://pbs.twimg.com/media/E9vClwrXsAA4DmC?format=png&name=medium)
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -153,7 +157,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Create a new branch with the name of your feature or fix and make a pull request to develop branch explaining your work.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -163,36 +167,21 @@ Contributions are what make the open source community such an amazing place to b
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Pablo Osorio - [@Pabllitoosorio](https://twitter.com/Pabllitoosorio) - 3387@holbertonschool.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: (https://github.com/jcgonzalezb/simple_shell)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+## AUTHORS
 
+Juan Camilo Gonzales
+Pablo Garcia Osorio
 
 
 
