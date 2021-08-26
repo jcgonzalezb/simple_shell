@@ -111,8 +111,6 @@ Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
 https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04
   ```
 
-## Installation
-
 1. Clone the repo
    ```sh
    git clone https://github.com/jcgonzalezb/simple_shell.git
@@ -136,7 +134,7 @@ Execute normaly and it would be show to prompt, feel free to enter your comand.
    ```sh
       ./hsh
    ```
-  (https://pbs.twimg.com/media/E9vA4R_X0AE2xQ6?format=png&name=medium)
+  [(https://pbs.twimg.com/media/E9vA4R_X0AE2xQ6?format=png&name=medium)]
 
 and always can quit safe, with comand exit or pushin in the keyboard crtl+d.
 
