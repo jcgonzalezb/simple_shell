@@ -142,7 +142,11 @@ and always can quit safe, with comand exit or pushin in the keyboard crtl+d.
 
 ### Non interactive-mode
 
-You can pass the argument with echo option  echo "ls" | ./hsh
+You can pass the argument with echo option
+
+    ```sh
+       echo "ls" | ./hsh
+    ```
 
 (https://pbs.twimg.com/media/E9vClwrXsAA4DmC?format=png&name=medium)
 
