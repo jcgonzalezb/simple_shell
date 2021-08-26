@@ -108,7 +108,7 @@ To get a local copy up and running follow these simple example steps.
 Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
 * copy
   ```sh
-https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04
+   https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04
   ```
 
 1. Clone the repo
