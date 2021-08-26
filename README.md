@@ -17,23 +17,16 @@
 -->
 
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-  </p>
-</p>
+## SIMPLE SHELL
 
-
+![Terminal](https://user-images.githubusercontent.com/85521026/131024838-ffa5e5fe-f345-4f6d-9a5a-304a47e2e965.png)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Description of the shell project</a>
+      <a href="#about-the-project">Shell description</a>
       <ul>
         <li><a href="#built-with">Requirements</a></li>
       <!-- <ul> -->
@@ -51,9 +44,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Description of the shell project
-
-[![Product Name Screen Shot][product-screenshot]](https://pbs.twimg.com/media/E9vMnVxWQAErBRB?format=png&name=medium)
+## Shell description
 
 The objective of this project is to create from scratch a simple UNIX command interpreter with limited functionality but applying the core concepts of a more robust shell. In simple words, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. It incorporates many features and generally executes other commands.
 
@@ -107,11 +98,11 @@ Execute normaly and it would be show to prompt, feel free to enter your comand.
    ```sh
       ./hsh
    ```
-  [(https://pbs.twimg.com/media/E9vA4R_X0AE2xQ6?format=png&name=medium)]
+ ![modo interactivo](https://user-images.githubusercontent.com/85521026/131025697-5c2d2340-d222-444b-93d9-de968d2f20de.png)
 
 and always can quit safe, with comand exit or pushin in the keyboard crtl+d.
 
-(https://pbs.twimg.com/media/E9vCAYOWYAYYo5Z?format=png&name=900x900)
+![exit](https://user-images.githubusercontent.com/85521026/131025747-9ef4ec8a-f047-4463-82d5-c3944fcfb875.png)
 
 ### Non interactive-mode
 
@@ -121,7 +112,8 @@ You can pass the argument with echo option
     echo "ls" | ./hsh
    ```
 
-(https://pbs.twimg.com/media/E9vClwrXsAA4DmC?format=png&name=medium)
+![non interactive](https://user-images.githubusercontent.com/85521026/131025791-9bb0c820-619a-4bcf-be2f-909728975e9d.png)
+
 
 
 
