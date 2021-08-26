@@ -46,7 +46,7 @@ int stat_command(char **args, char **dividedPath)
 		}
 	}
 	if (j == 0)
-		return (-1);
+		return (127); /*-1*/
 
 	return (0);
 }
