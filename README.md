@@ -56,6 +56,10 @@ The objective of this project is to create from scratch a simple UNIX command in
     How does the shell use the PATH to find the programs.
     How to execute another program with the execve system call.
     How to suspend the execution of a process until one of its children terminates
+    
+## How it works?
+
+![Shell](https://user-images.githubusercontent.com/85521026/131027935-9b59b6c6-bf39-400d-9def-72c2fe9ce1d2.jpeg)
 
 ### Requirements
 
