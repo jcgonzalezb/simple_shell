@@ -163,6 +163,7 @@ Create a new branch with the name of your feature or fix and make a pull request
 
 <!-- CONTACT -->
 ## Contact
+Juan Camilo Gonzalez - [@Juankter](https://twitter.com/Juankter) - jcgonzalezb@gmail.com
 
 Pablo Osorio - [@Pabllitoosorio](https://twitter.com/Pabllitoosorio) - 3387@holbertonschool.com
 
