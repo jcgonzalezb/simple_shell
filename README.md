@@ -74,7 +74,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Description of the shell project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://pbs.twimg.com/media/E9vMnVxWQAErBRB?format=png&name=medium)
 
 The objective of this project is to create from scratch a simple UNIX command interpreter with limited functionality but applying the core concepts of a more robust shell. In simple words, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. It incorporates many features and generally executes other commands.
 
