@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			pathValue = getvarfromenv("PATH");
 			copy_path = _strdup(pathValue);
 			dividedPath = tokenizepath(copy_path);
-			if (stat_command(args, dividedPath) == 127)
+			if (stat_command(args, dividedPath) == -1)
 			{
 				_perror(argv[0], args[0]);
 			}
