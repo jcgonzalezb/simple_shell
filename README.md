@@ -106,7 +106,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
-* copy
+* visit link for more information
   ```sh
    https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04
   ```
@@ -143,12 +143,9 @@ and always can quit safe, with comand exit or pushin in the keyboard crtl+d.
 ### Non interactive-mode
 
 You can pass the argument with echo option  echo "ls" | ./hsh
+
 (https://pbs.twimg.com/media/E9vClwrXsAA4DmC?format=png&name=medium)
 
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
 
 
 
@@ -179,6 +176,7 @@ Project Link: (https://github.com/jcgonzalezb/simple_shell)
 ## AUTHORS
 
 Juan Camilo Gonzales
+
 Pablo Garcia Osorio
 
 
